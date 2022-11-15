@@ -49,14 +49,12 @@ package: latexmk
 	for f in $$(ls *.pdf); do
 		echo "<p><a href='$${f}'>$${f}</a></p>" >> index.html
 	done
-
 copy:
 	for d in $(DIRS); do
 		cp .latexmkrc $${d}
 		cp .texsc $${d}
 		cp .texqc $${d}
 	done
-
 clean:
 	for d in $(DIRS); do
 		cd $${d}
